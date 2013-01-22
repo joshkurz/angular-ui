@@ -24,19 +24,13 @@ angular.module('ui.directives').directive('uiCurrency', ['ui.config', 'currencyF
         var num;
         num = viewvalue * 1;
         if (num > 0) {
-          element.addClass(opts.pos);
-        } else {
-          element.removeClass(opts.pos);
-        }
+          element.toggleClass(opts.pos);
+        } 
         if (num < 0) {
-          element.addClass(opts.neg);
-        } else {
-          element.removeClass(opts.neg);
+          element.toggleClass(opts.neg);
         }
         if (num === 0) {
-          element.addClass(opts.zero);
-        } else {
-          element.removeClass(opts.zero);
+          element.toggleClass(opts.zero);
         }
         if (viewvalue === '') {
           element.text('');
@@ -55,3 +49,4 @@ angular.module('ui.directives').directive('uiCurrency', ['ui.config', 'currencyF
     }
   };
 }]);
+      
